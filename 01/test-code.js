@@ -25,7 +25,7 @@ exports.handler = (event, context, callback) => {
 
 
         var connection = mysql.createConnection({
-            host: "cfst-3376-7a665921482eec9e938751c73e200b1-database-6x2etym2vsxp.cc79u6pi7wsh.us-east-1.rds.amazonaws.com",
+            host: "<hostname>",
             user: "username",
             password: "***********************",
             database: "example",
