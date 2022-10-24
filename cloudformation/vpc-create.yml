@@ -1,7 +1,9 @@
 AWSTemplateFormatVersion: 2010-09-09
 # This CloudFormation template deploys a basic VPC / Network. 
 Resources:
- VPC:
+
+  # First, a VPC:
+  VPC:
     Type: AWS::EC2::VPC
     Properties:
       CidrBlock: 10.1.0.0/16
@@ -9,4 +11,15 @@ Resources:
       EnableDnsHostnames: true
       Tags:
       - Key: Name
-        Value:  !Join ['', [!Ref "AWS::StackName", "-VPC" ]]
+        Value:  !Ref "AWS::StackName"
+
+  # Our VPC will need internet access:      
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    DependsOn: VPC
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    # Notice how you can't attach an IGW to a VPC unless both are created:
+    Properties:
+      VpcId: !Ref VPC
+      InternetGatewayId: !Ref InternetGateway
