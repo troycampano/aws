@@ -38,7 +38,6 @@
                 "apigateway:GET",
                 "apigateway:PATCH",
                 "apigateway:PUT",
-                "apigateway:TagResource",
                 "iam:CreateRole",
                 "iam:DeleteRole",
                 "iam:GetRolePolicy",
@@ -51,7 +50,8 @@
                 "iam:DeleteRolePolicy",
                 "dynamodb:*",
                 "route53:*",
-                "logs:FilterLogEvents"
+                "logs:FilterLogEvents",
+                "cognito-idp:*"
             ],
             "Resource": "*"
         }
