@@ -38,6 +38,7 @@
                 "apigateway:GET",
                 "apigateway:PATCH",
                 "apigateway:PUT",
+                "apigateway:TagResource",
                 "iam:CreateRole",
                 "iam:DeleteRole",
                 "iam:GetRolePolicy",
